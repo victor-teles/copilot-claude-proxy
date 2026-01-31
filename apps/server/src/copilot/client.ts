@@ -1,4 +1,4 @@
-import { env } from "@copilot-claude-proxy/env/server";
+import { getServerEnv } from "@copilot-claude-proxy/env/server";
 import { CopilotClient } from "@github/copilot-sdk";
 
 export interface CopilotModel {
@@ -9,6 +9,8 @@ export interface CopilotModel {
 let clientPromise: Promise<CopilotClient> | undefined;
 
 const createClient = async (): Promise<CopilotClient> => {
+  const env = getServerEnv();
+
   const client = new CopilotClient({
     cliPath: env.COPILOT_CLI_PATH,
     cliUrl: env.COPILOT_CLI_URL,
@@ -34,6 +36,7 @@ export const listCopilotModels = async (): Promise<CopilotModel[]> => {
     return result.map((model) => ({ id: model.id, name: model.name }));
   }
 
+  const env = getServerEnv();
   return [{ id: env.COPILOT_MODEL, name: "generic" }];
 };
 
@@ -42,6 +45,8 @@ export const runCopilotPrompt = async (input: {
   model?: string;
   system?: string;
 }): Promise<string> => {
+  const env = getServerEnv();
+
   const client = await getCopilotClient();
 
   const session = await client.createSession({
@@ -77,6 +82,8 @@ export const streamCopilotPrompt = async (input: {
   system?: string;
   onDelta: (deltaText: string) => void;
 }): Promise<string> => {
+  const env = getServerEnv();
+
   const client = await getCopilotClient();
 
   const session = await client.createSession({

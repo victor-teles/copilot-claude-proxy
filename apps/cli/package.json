@@ -1,0 +1,22 @@
+{
+  "name": "cli",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "copilot-claude-proxy": "./src/index.ts"
+  },
+  "scripts": {
+    "check-types": "tsc -b",
+    "dev": "bun run --hot src/index.ts",
+    "smoke": "bun run scripts/smoke.ts"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "server": "workspace:*"
+  },
+  "devDependencies": {
+    "@copilot-claude-proxy/config": "workspace:*",
+    "@types/bun": "catalog:",
+    "typescript": "catalog:"
+  }
+}

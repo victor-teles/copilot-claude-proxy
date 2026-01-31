@@ -3,13 +3,15 @@ schema: spec-driven
 # Project context (optional)
 # This is shown to AI when creating artifacts.
 # Add your tech stack, conventions, style guides, domain knowledge, etc.
-ClaudeProxy:
-  context: |
-    Tech stack: TypeScript, Bun, Hono
-    We use conventional commits
-    We use biome for code formatting and linting
-    We follow best practices for API design and error handling
-    Domain: library to proxy github copilot sdk requests as anthropic claude messages api
+context: |
+  Language: Portuguese (pt-BR)
+  All artifacts must be written in Brazilian Portuguese.
+  
+  Tech stack: TypeScript, Bun, Hono
+  We use conventional commits
+  We use biome for code formatting and linting
+  We follow best practices for API design and error handling
+  Domain: library to proxy github copilot sdk requests as anthropic claude messages api
 
 # Per-artifact rules (optional)
 # Add custom rules for specific artifacts.

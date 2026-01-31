@@ -21,6 +21,8 @@
     "dev:native": "turbo -F native dev",
     "dev:web": "turbo -F web dev",
     "dev:server": "turbo -F server dev",
+    "dev:cli": "turbo -F cli dev",
+    "smoke:cli": "bun run --filter cli smoke",
     "check": "ultracite check",
     "fix": "ultracite fix"
   },

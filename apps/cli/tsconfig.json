@@ -1,0 +1,9 @@
+{
+  "extends": "@copilot-claude-proxy/config/tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "dist",
+    "strictNullChecks": true
+  },
+  "references": [{ "path": "../server" }]
+}

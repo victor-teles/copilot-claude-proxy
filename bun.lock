@@ -18,6 +18,21 @@
         "ultracite": "7.1.1",
       },
     },
+    "apps/cli": {
+      "name": "cli",
+      "bin": {
+        "copilot-claude-proxy": "./src/index.ts",
+      },
+      "dependencies": {
+        "cac": "^6.7.14",
+        "server": "workspace:*",
+      },
+      "devDependencies": {
+        "@copilot-claude-proxy/config": "workspace:*",
+        "@types/bun": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
     "apps/server": {
       "name": "server",
       "dependencies": {
@@ -187,6 +202,8 @@
     "chokidar": ["chokidar@5.0.0", "", { "dependencies": { "readdirp": "^5.0.0" } }, "sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw=="],
 
     "citty": ["citty@0.2.0", "", {}, "sha512-8csy5IBFI2ex2hTVpaHN2j+LNE199AgiI7y4dMintrr8i0lQiFn+0AWMZrWdHKIgMOer65f8IThysYhoReqjWA=="],
+
+    "cli": ["cli@workspace:apps/cli"],
 
     "commander": ["commander@14.0.2", "", {}, "sha512-TywoWNNRbhoD0BXs1P3ZEScW8W5iKrnbithIl0YH+uCmBd0QpPOA8yc82DS3BIE5Ma6FnBVUsJ7wVUDz4dvOWQ=="],
 

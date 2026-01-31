@@ -49,12 +49,36 @@ Run the API:
 bun run dev:server
 ```
 
+Or run via CLI:
+
+```bash
+# After `bun install`, the bin is available in the workspace
+bunx copilot-claude-proxy start --cors-origin http://localhost:3000
+
+# You can also configure via env
+# CORS_ORIGIN=http://localhost:3000 bunx copilot-claude-proxy start
+```
+
 The API defaults to `http://localhost:3000`.
+
+### CLI options
+
+The `start` command supports:
+
+- `--host` (env: `HOST`, default: `localhost`)
+- `--port` (env: `PORT`, default: `3000`)
+- `--cors-origin` (env: `CORS_ORIGIN`, required)
 
 Smoke test:
 
 ```bash
 bun run --filter server smoke
+```
+
+CLI smoke test:
+
+```bash
+bun run smoke:cli
 ```
 
 ## Claude API Compatibility
@@ -95,6 +119,7 @@ Other Claude/Anthropic request fields may be accepted but are ignored by the pro
 ```
 copilot-claude-proxy/
 ├── apps/
+│   ├── cli/               # CLI entrypoint (`copilot-claude-proxy`)
 │   └── server/            # Hono API (Claude-compatible routes)
 ├── packages/
 │   ├── env/               # Runtime env parsing/validation
@@ -105,7 +130,9 @@ copilot-claude-proxy/
 ## Scripts
 
 - `bun run dev`: Start all apps in development mode (turbo)
+- `bun run dev:cli`: Run the CLI in dev mode
 - `bun run dev:server`: Start only the API server
+- `bun run smoke:cli`: Smoke test the CLI
 - `bun run build`: Build all apps
 - `bun run check-types`: Typecheck across the monorepo
 - `bun run check`: Lint/check via Ultracite

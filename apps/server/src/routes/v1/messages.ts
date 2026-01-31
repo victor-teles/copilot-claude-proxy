@@ -1,4 +1,4 @@
-import { env } from "@copilot-claude-proxy/env/server";
+import { getServerEnv } from "@copilot-claude-proxy/env/server";
 import { Hono } from "hono";
 import {
   mapErrorToAnthropic,
@@ -50,6 +50,8 @@ messagesRouter.post("/messages", async (c) => {
     }
 
     const request = parsed.data;
+
+    const env = getServerEnv();
 
     const model = request.model ?? env.COPILOT_MODEL;
     const prompt = buildPromptFromAnthropicRequest(request);
