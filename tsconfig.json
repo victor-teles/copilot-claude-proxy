@@ -1,0 +1,6 @@
+{
+  "extends": "@copilot-claude-proxy/config/tsconfig.base.json",
+  "compilerOptions": {
+    "strictNullChecks": true
+  }
+}
