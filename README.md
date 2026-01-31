@@ -3,8 +3,6 @@
 	<img alt="copilot-claude-proxy" src=".github/banner.webp" style="border-radius: 8px;" />
 </picture>
 
-# copilot-claude-proxy
-
 A small HTTP proxy that exposes a Claude/Anthropic-compatible API surface on top of the GitHub Copilot CLI (via `@github/copilot-sdk`).
 
 This is useful when you have a Claude-compatible client but want requests to be fulfilled by Copilot.
